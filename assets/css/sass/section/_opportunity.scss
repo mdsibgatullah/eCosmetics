@@ -1,0 +1,108 @@
+.opportunity{
+    .section{
+        padding: 0;
+        overflow: hidden;
+        ul{
+            @include grid(repeat(5, 1fr));
+            gap: 0px;
+            align-items: center;
+            li{
+                text-align: center;
+                border-right: 1px solid $gray;
+                text-transform: uppercase;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                height: 100%;
+                padding: 30px 5px;
+                &:last-child{
+                    border: none;
+                    padding: 0;
+                }
+                h6{
+                    padding-bottom: 8px;
+                }
+                p{
+                    line-height: 1.5;
+                    color: $primary-color;
+                }
+                i{
+                    font-size: 25px;
+                    color: $primary-color;
+                    margin-bottom: 5px;
+                }
+                ol{
+                    background-color: $primary-color;
+                    height: 100%;
+                    li{
+                        border: none;
+                        height: auto;
+                        padding: 21px 0;
+                        a{
+                            padding: 10px 0;
+                            @include flex(center, center, 10px);
+                            background-color: $body-color;
+                            margin: 0 15px;
+                            border-radius: 5px;
+                            border: 1px solid $body-color;
+                            transition: .5s;
+                            &:hover{
+                                background-color: transparent;
+                                h4,i{
+                                    color: $text-primary;
+                                }
+                            }
+                            h4,i{
+                                transition: .5s;
+                                color: $primary-color;
+                                margin: 0;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 1080px) {
+    .opportunity{
+        .section{
+            ul{
+                @include grid(repeat(2, 1fr));
+                li{
+                    border-right: 1px solid transparent;
+                    border-bottom: 1px solid $gray;
+                    &:last-child {
+                        border: none;
+                        padding: 0;
+                        grid-column: span 2;
+                    }
+                    ol{
+                        padding: 20px 0;
+                    }
+                }
+            }
+        }
+    }
+}
+@media screen and (max-width: 576px) {
+    .opportunity{
+        .section{
+            ul{
+                @include grid(repeat(1, 1fr));
+                li{
+                    border-right: 1px solid transparent;
+                    border-bottom: 1px solid $gray;
+                    padding: 20px 0;
+                    &:last-child {
+                        grid-column: span 1;                    
+                    }
+                    ol{
+                        padding: 20px 0;
+                    }
+                }
+            }
+        }
+    }
+}

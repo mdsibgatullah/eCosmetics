@@ -1,0 +1,68 @@
+footer{
+    background-color: $gray-dark;
+    color: $body-color;
+    .footer{
+        padding: 20px 0;
+        @include grid(repeat(3, 1fr));
+        justify-items: center;
+        ul{
+            h4{
+                color: $text-primary;
+                text-transform: capitalize;
+                padding-bottom: 15px;
+            }
+            li{
+                @include flexShort(10px);
+                padding: 5px 0;
+                opacity: .7;
+                cursor: pointer;
+                transition: .5s;
+                &:hover{
+                    opacity: 1;
+                }
+                a{
+                    @include flexShort(10px);
+
+                }
+                ol{
+                    @include flexShort(15px);
+                    margin-top: 10px;
+                    li{
+                        font-size: 25px;
+                    }
+                }
+            }
+        }
+    }
+    .copy_right{
+        padding: 10px 0;
+        background-color: $primary-color;
+        .copy_right_text{
+            @include flex(center, space-between, 5px);
+            flex-wrap: wrap;
+            p{
+                font-size: 14px;
+            }
+        }
+    }
+}
+@media screen and (max-width: 992px) {
+    footer{
+        .footer{
+            @include grid(repeat(2, 1fr));
+        }
+        .copy_right{
+            .copy_right_text{
+                @include flex(center, center, 5px);
+            }
+        }
+    }
+}
+@media screen and (max-width: 768px) {
+    footer{
+        .footer{
+            @include grid(repeat(1, 1fr));
+            justify-items: start;
+        }
+    }
+}

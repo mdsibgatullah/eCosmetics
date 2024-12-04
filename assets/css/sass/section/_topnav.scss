@@ -1,0 +1,49 @@
+// top nav ------------
+.top_nav{
+    background-color: $gray-light;
+    nav{
+        @include flex(center, space-between, 15px);
+        height: 30px;
+        text-transform: capitalize;
+        p,a,marquee{
+            font-size: 14px;
+            transition: .5s;
+            cursor: pointer;
+            &:hover{
+                color: $primary-color;
+            }
+        }
+        p{
+            @include flexShort(5px)
+        }
+        marquee {
+            max-width: 45%;
+            position: relative;
+            margin: 0 auto;
+            overflow: hidden;
+            @include RightLeftTransfer();
+        }
+        div{
+            @include flex(center, start, 0px);
+            ul,ol{
+                @include flex(center, start, 0px);
+                li{
+                    margin: 0 3px;
+                    a{
+                        padding: 0 5px;
+                    }
+                }
+            }
+            ul{
+                li{
+                    border-right: 1px solid #c2c2c2;
+                }
+            }
+        }
+    }
+}
+@media screen and (max-width: 1080px) {
+    .top_nav{
+        display: none;
+    }
+}

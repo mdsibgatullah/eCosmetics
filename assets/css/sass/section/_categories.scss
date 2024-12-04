@@ -1,0 +1,56 @@
+.categories{
+    @include grid(repeat(5, 1fr));
+    li{
+        position: relative;
+        border-radius: 10px;
+        overflow: hidden;
+        &:hover{
+            .category_image{
+                img{
+                    transform: scale(1.2);
+                }
+            }
+        }
+        .category_image{
+            transition: .5s;
+            img{
+                transition: .5s;
+            }
+        }
+        .category_name{
+            position: absolute;
+            width: 100%;
+            bottom: 0;
+            left: 0;
+            padding: 10px 0;
+            background: linear-gradient(to bottom, transparent, #000000);
+            h3{
+                text-align: center;
+                color: $text-primary;
+                text-transform: capitalize;
+                @include line(1)
+            }
+        }
+    }
+}
+@media screen and (max-width: 1080px) {
+    .categories{
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+@media screen and (max-width: 768px) {
+    .categories{
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+@media screen and (max-width: 576px) {
+    .categories{
+        grid-template-columns: repeat(2, 1fr);
+        gap: 8px;
+        .category_name{
+            h3{
+                font-size: 18px;
+            }
+        }
+    }
+}
