@@ -5,7 +5,7 @@
         .nav_data{
             @include flex(center, space-between, 10px);
             height: 97px;
-            padding: 5px 0;
+            padding: 8px 0;
             .logo_wraper{
                 @include flexShort(5px);
                 .menu_icon{
@@ -119,6 +119,17 @@
         }
     }
 }
+
+header.scroll_header{
+    position: fixed;
+    width: 100%;
+    left: 0;
+    z-index: 10;
+    background-color: $body-color;
+    .top_nav{
+        display: none;
+    }
+}
 @media screen and (max-width: 768px) {
     // nav menu ------------------
     .nav_menu{
@@ -213,7 +224,8 @@
                         }
                     }
                     .dropdown{
-                        left: 35px;
+                        left: auto;
+                        right: 0;
                         background-color: $body-color;
                         color: $text-secondary;
                         li{

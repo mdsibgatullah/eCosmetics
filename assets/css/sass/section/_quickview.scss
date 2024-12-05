@@ -1,0 +1,110 @@
+.quick_wrap{
+    background-color: $body-color;
+    box-shadow: 0 0 4px gray;
+    border-radius: 10px;
+    overflow: hidden;
+    padding: 0;
+
+    
+    position: fixed;
+    width: 800px;
+    left: 50%;
+    top: 50%;
+    z-index: 12;
+    transform: translate(-50%, -50%);
+
+    display: none;
+    .quick_view{
+        position: relative;
+        .close_quick_view{
+            position: absolute;
+            width: 30px;
+            height: 30px;
+            top: 10px;
+            right: 10px;
+            padding: 0;
+            border-radius: 50%;
+        }
+        .product_data{
+            text-transform: capitalize;
+            height: 80vh;
+            padding: 20px;
+            overflow-y: scroll;
+            @include grid(repeat(2, 1fr));
+            @include custom_scroll();
+            .pd_img{
+                img{
+                    border: 1px solid $gray;
+                }
+            }
+            .product_dtl{
+                h3{
+                    @include line(2);
+                }
+                ul{
+                    li{
+                        .pd{
+                            @include grid(130px 10px auto);
+                            align-items: center;
+                            gap: 5px;
+                            margin: 5px 0;
+                        }
+                        img{
+                            width: 60px;
+                        }
+                        ol{
+                            @include flexShort(10px);
+                            flex-wrap: wrap;
+                        }
+                        .quantity{
+                            li{
+                                border: 1px solid $gray;
+                                border-radius: 20px;
+                                @include flexShort(10px);
+                                button{
+                                    width: 35px;
+                                    height: 35px;
+                                    border-radius: 50%;
+                                    padding: 7px;
+                                }
+                            }
+                        }
+                        @include userReview();
+                    }
+                }
+                .quick_view_btn{
+                    @include flexShort(5px);
+                    flex-wrap: wrap;
+                    margin: 5px 0;
+                    button{
+                        padding: 10px 5px;
+                        border-radius: 5px;
+                        width: 80px;
+                        height: 60px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 850px) {
+    .quick_wrap{
+        width: 700px;
+    }
+}
+@media screen and (max-width: 768px) {
+    .quick_wrap{
+        width: 90%;
+        .quick_view{
+            .product_data{
+                @include grid(repeat(1, 1fr));
+            }
+        }
+    }
+}
+@media screen and (max-width: 576px) {
+    .quick_wrap{
+        width: 98%;
+    }
+}

@@ -31,3 +31,14 @@ searchInput.addEventListener("input", () => {
         suggProduct.style.display = "none";
     }
 });
+
+
+const header = document.querySelector('#header')
+
+window.addEventListener('scroll', () => {
+    if(window.scrollY > 5){
+        header.classList.add('scroll_header');
+    }else{
+        header.classList.remove('scroll_header');
+    }
+})

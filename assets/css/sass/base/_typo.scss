@@ -79,9 +79,9 @@ button{
     cursor: pointer;
     font-size: 16px;
     transition: .5s;
-    // &:hover{
-    //     background-color: $primary-color;
-    // }
+    &:hover{
+        background-color: $secondary-color;
+    }
 }
 button:disabled{
     background-color: $gray;
@@ -124,14 +124,14 @@ i{
     }
 }
 .overlay {
-    position: absolute;
+    position: fixed;
     width: 100%;
     height: 100%;
     bottom: 0;
     left: 0;
-    z-index: 1;
+    z-index: 11;
     display: none;
-    background-color: #3333335b;
+    background-color: #3333337f;
 }
 hr {
     border: 1px solid $gray;
@@ -198,7 +198,8 @@ section h2{
 
 // Media Queries for responsiveness
 @media screen and (max-width: 768px) {
-    .container {padding: 0 20px;}
+    .container {padding: 0 15px;}
+    .section{ padding: 12px;}
     h1 {font-size: 34px;}
     h2 {font-size: 24px;}
     h3 {font-size: 18px;}

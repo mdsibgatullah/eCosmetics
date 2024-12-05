@@ -3,8 +3,10 @@
 @import './sass/base/typo';
 
 // section ------------
+// header ------ 
 @import './sass/section/topnav';
 @import './sass/section/navmenu';
+
 @import './sass/section/slider';
 @import './sass/section/categories';
 @import './sass/section/companyslider';
@@ -13,3 +15,6 @@
 @import './sass/section/information';
 @import './sass/section/opportunity';
 @import './sass/section/footer';
+
+
+@import './sass/section/quickview';

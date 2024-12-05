@@ -33,11 +33,11 @@
         background: linear-gradient(to left, $gray-light, transparent);
     }
 }
-@mixin svg{
-    width: 30px;
-    height: 20px;
-    color: inherit;
-}
+// @mixin svg{
+//     width: 30px;
+//     height: 20px;
+//     color: inherit;
+// }
 @mixin icon{
     display: flex;
     align-items: center;
@@ -61,11 +61,6 @@
     overflow: hidden;
     text-overflow: ellipsis;
 }
-// @mixin radius($px,$color){
-//     border-radius: $px;
-//     box-shadow: 0 0 4px $color;
-//     transition: .5s;
-// }
 @mixin custom_scroll {
     &::-webkit-scrollbar {
         width: 8px;
@@ -76,23 +71,17 @@
         border: 2px solid $body-color;
     }
 }
-// @mixin icon($width,$height,$line){
-//     min-width: $width;
-//     height: $height;
-//     line-height: $line !important;
-// }
-// @mixin clamp($line){
-//     display: -webkit-box;
-//     -webkit-line-clamp: $line;
-//     -webkit-box-orient: vertical;
-//     overflow: hidden;
-// }
-// @mixin gridLi($columns){
-//     display: grid;
-//     grid-template-columns: $columns;
-//     margin-bottom: 8px;
-//     background-color: #ffffff3f;
-//     box-shadow: 0 0 3px 1px #ffffff;
-//     padding: 5px 8px;
-//     border-radius: 3px;
-// }
+@mixin userReview{
+    .user_review{
+        display: flex;
+        align-items: center;
+        gap: 3px;
+        flex-wrap: wrap;
+        li{
+            font-size: 12px;
+            i{
+                color: #fd9843;
+            }
+        }
+    }
+}
